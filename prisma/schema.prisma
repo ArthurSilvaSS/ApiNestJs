@@ -6,3 +6,13 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Hero {
+  id        Int     @id @default(autoincrement())
+  civilName String  @db.VarChar(100)
+  heroName  String  @db.VarChar(100)
+  age       Int
+  team      String? @db.VarChar(100)
+
+  @@map("heroes")
+}
